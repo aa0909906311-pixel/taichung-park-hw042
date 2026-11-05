@@ -1,0 +1,415 @@
+/* =========================================================
+   《拾光日嚐》 Graduation Project - Master Stylesheet
+   Style: Warm Beige & Pastel Vintage Aesthetic
+   Author: 黃語甄 (d1245411) - 逢甲行銷四甲
+   ========================================================= */
+
+/* 1. CSS 全局變數與重設 */
+:root {
+    --bg-color: #f7f3eb;         /* 柔和米白背景 (國漫館復古風格) */
+    --card-bg: #ffffff;          /* 卡片純白底色 */
+    --text-main: #3c2a21;        /* 濃郁暖褐色文字 */
+    --text-muted: #6e5e55;       /* 次要灰色文字 */
+    --accent-brown: #4a3b32;     /* 膠囊按鈕與標題深棕 */
+    --accent-red: #b33928;       /* 強調紅棕色 */
+    --border-color: #e6dfd3;     /* 細緻邊框色 */
+    --shadow-soft: 0 4px 20px rgba(60, 42, 33, 0.06);
+    --radius-lg: 16px;
+    --radius-pill: 30px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+    line-height: 1.85;
+    font-size: 16px;
+}
+
+/* 2. 頂部膠囊導覽列 (Navbar Header) */
+.navbar-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(247, 243, 235, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 14px 24px;
+}
+
+.navbar-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-badge {
+    background-color: var(--accent-red);
+    color: #ffffff;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.logo-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.nav-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pill-btn {
+    text-decoration: none;
+    color: var(--text-main);
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.25s ease;
+}
+
+.pill-btn:hover, .pill-btn.active {
+    background-color: var(--accent-brown);
+    color: #ffffff;
+    border-color: var(--accent-brown);
+}
+
+/* 3. 雙欄主要版面結構 (Layout Wrapper) */
+.layout-wrapper {
+    max-width: 1240px;
+    margin: 28px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 28px;
+}
+
+/* 4. 左側邊欄 (Sticky Sidebar) */
+.sidebar {
+    position: relative;
+}
+
+.sidebar-card {
+    position: sticky;
+    top: 85px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    box-shadow: var(--shadow-soft);
+}
+
+.sidebar-title {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+    color: var(--accent-brown);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin-bottom: 10px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    transition: color 0.2s;
+}
+
+.sidebar-menu a:hover {
+    color: var(--accent-red);
+    font-weight: bold;
+}
+
+.sidebar-callout {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #fcf9f4;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-red);
+}
+
+.quote-text {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    font-style: italic;
+}
+
+/* 5. 右側主要內容區與 Hero Banner */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.hero-banner {
+    background: linear-gradient(135deg, #4a3b32 0%, #2e211a 100%);
+    color: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 48px 36px;
+    box-shadow: var(--shadow-soft);
+}
+
+.hero-subtitle {
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    color: #d6c5b9;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    margin: 12px 0;
+    line-height: 1.3;
+}
+
+.hero-desc {
+    font-size: 1.05rem;
+    color: #eae1d9;
+    margin-bottom: 24px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-primary {
+    background-color: var(--accent-red);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: var(--radius-pill);
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 6. 通用內容卡片與 Grid 系統 */
+.content-section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow-soft);
+}
+
+.section-header {
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    color: var(--accent-brown);
+}
+
+.section-sub {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Grid Layouts */
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.grid-2-col-even {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.info-card {
+    background-color: #fcfaf7;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.card-tag {
+    display: inline-block;
+    font-size: 0.78rem;
+    background-color: #efe8dc;
+    color: var(--accent-brown);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 社群成效數據 Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: #fdfaf6;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-red);
+}
+
+.stat-label {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.strategy-box {
+    background-color: #fcf9f4;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid var(--accent-brown);
+}
+
+.strategy-box ul, .custom-ol {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+/* 圖片與圖說處理 */
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    border: 1px solid var(--border-color);
+}
+
+.img-caption {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* 個人資料卡 */
+.profile-card-main {
+    background-color: #fdfaf6;
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    border-radius: 12px;
+    border-top: 4px solid var(--accent-red);
+}
+
+.profile-badge {
+    display: inline-block;
+    background-color: var(--accent-red);
+    color: #ffffff;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+.profile-list {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+/* 頁尾 Footer */
+.site-footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+}
+
+.back-top {
+    color: var(--accent-brown);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+/* 7. RWD 手機與平板自適應設定 (Responsive Media Queries) */
+@media (max-width: 900px) {
+    .layout-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none; /* 手機端自動隱藏側邊欄，依靠頂部導覽列 */
+    }
+
+    .grid-3-col, .grid-2-col, .grid-2-col-even, .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-title {
+        font-size: 1.7rem;
+    }
+
+    .content-section {
+        padding: 20px 16px;
+    }
+}
